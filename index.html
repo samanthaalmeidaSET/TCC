@@ -1,0 +1,206 @@
+html<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo das Maquetes Caseiras</title>
+    <style>
+        /* Configurações Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4a5d4e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Seção de Introdução / Materiais */
+        .intro-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .intro-section h2 {
+            color: #4a5d4e;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0dcd3;
+            padding-bottom: 5px;
+        }
+
+        .materiais-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .material-item {
+            background: #f1ede4;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            color: #5c6f60;
+        }
+
+        /* Seção da Galeria */
+        .galeria-titulo {
+            color: #4a5d4e;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .grid-maquetes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card-maquete {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card-maquete:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-tutorial {
+            display: inline-block;
+            background-color: #8fa895;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-tutorial:hover {
+            background-color: #4a5d4e;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Arte em Miniatura</h1>
+        <p>Aprenda a construir maquetes incríveis usando materiais simples que você tem em casa!</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Seção de Materiais -->
+        <section class="intro-section">
+            <h2>🏠 Materiais Caseiros Essenciais</h2>
+            <p>Fazer maquetes não precisa ser caro. Com criatividade, materiais recicláveis viram grandes estruturas arquitetônicas ou projetos escolares perfeitos:</p>
+            <div class="materiais-lista">
+                <div class="material-item">📦 Papelão e Caixas</div>
+                <div class="material-item">🪵 Palitos de Picolé / Churrasco</div>
+                <div class="material-item">🧴 Cola Branca e Fita</div>
+                <div class="material-item">🎨 Tintas Guache / Acrílica</div>
+            </div>
+        </section>
+
+        <!-- Seção de Projetos e Inspirações -->
+        <h2 class="galeria-titulo">💡 Idéias de Projetos para se Inspirar</h2>
+        
+        <div class="grid-maquetes">
+            <!-- Projeto 1 -->
+            <div class="card-maquete">
+                <div class="card-info">
+                    <h3>Casinha de Palitos</h3>
+                    <p>Ideal para iniciantes. Feita inteiramente com palitos de picolé colados estruturalmente, imitando cabanas rústicas de madeira real.</p>
+                    <a href="#" class="btn-tutorial">Ver Passo a Passo</a>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="card-maquete">
+                <div class="card-info">
+                    <h3>Mini Cidade de Papelão</h3>
+                    <p>Perfeita para trabalhos escolares. Prédios geométricos recortados de caixas de sapato e pintados com guache colorido.</p>
+                    <a href="#" class="btn-tutorial">Ver Passo a Passo</a>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="card-maquete">
+                <div class="card-info">
+                    <h3>Topografia e Maquete Verde</h3>
+                    <p>Aprenda a criar montanhas cortando camadas de papelão ondulado sobrepostas e usando esponjas velhas trituradas para simular grama.</p>
+                    <a href="#" class="btn-tutorial">Ver Passo a Passo</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Arte em Miniatura - Feito à mão com criatividade.</p>
+    </footer>
+
+</body>
+</html>
