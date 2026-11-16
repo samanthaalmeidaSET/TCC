@@ -141,6 +141,17 @@
             margin-top: 60px;
             font-size: 0.9rem;
         }
+        dialog {
+      border: none;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Estiliza o fundo escuro (backdrop) quando aberto com showModal() */
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     </style>
 </head>
 <body>
@@ -182,8 +193,15 @@
                 <div class="card-info">
                     <h3>Mini Cidade de Papelão</h3>
                     <p>Perfeita para trabalhos escolares. Prédios geométricos recortados de caixas de sapato e pintados com guache colorido.</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8OKL3vqDN7Q?si=lziJXkbYUZ94zxqC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-                        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                     <a href="https://canva.link/m1fmo8erixd7erw" target="_blank" class="btn-tutorial" id="abrirModal">Ver Passo a Passo</a>
+                   <!-- Elemento nativo de diálogo (Modal) -->
+                        <dialog id="meuModal">
+                          <h2>Título do Modal</h2>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/8OKL3vqDN7Q?si=Nl3UeWHLw7oXszih" title="YouTube video player" 
+                              frameborder="0" allow="accelerometer; autoplay; 
+                              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                          <button id="fecharModal">Fechar</button>
+                        </dialog>
                 </div>
             </div>
 
@@ -202,6 +220,22 @@
     <footer>
         <p>&copy; 2026 Arte em Miniatura - Feito à mão com criatividade.</p>
     </footer>
+    <script>
+
+        const modal = document.getElementById('meuModal');
+        const btnAbrir = document.getElementById('abrirModal');
+        const btnFechar = document.getElementById('fecharModal');
+        
+        // Abre o modal de forma modal (bloqueia o fundo)
+        btnAbrir.addEventListener('click', () => {
+          modal.showModal();
+        });
+        
+        // Fecha o modal
+        btnFechar.addEventListener('click', () => {
+          modal.close();
+        });
+    </script>
 
 </body>
 </html>
