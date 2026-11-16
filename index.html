@@ -126,6 +126,7 @@
             font-weight: bold;
             font-size: 0.9rem;
             transition: background 0.2s;
+            cursor: pointer;
         }
 
         .btn-tutorial:hover {
@@ -141,17 +142,46 @@
             margin-top: 60px;
             font-size: 0.9rem;
         }
+
+        /* Estilos do Modal */
         dialog {
-      border: none;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Estiliza o fundo escuro (backdrop) quando aberto com showModal() */
-    dialog::backdrop {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+            margin: auto;
+            border: none;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 90vw;
+        }
+
+        dialog h2 {
+            margin-bottom: 15px;
+            color: #4a5d4e;
+        }
+
+        dialog iframe {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .btn-fechar {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #4a5d4e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-fechar:hover {
+            background-color: #333;
+        }
+        
+        /* Estiliza o fundo escuro (backdrop) quando aberto com showModal() */
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -176,7 +206,7 @@
         </section>
 
         <!-- Seção de Projetos e Inspirações -->
-        <h2 class="galeria-titulo">💡 Idéias de Projetos para se Inspirar</h2>
+        <h2 class="galeria-titulo">💡 Ideias de Projetos para se Inspirar</h2>
         
         <div class="grid-maquetes">
             <!-- Projeto 1 -->
@@ -193,16 +223,16 @@
                 <div class="card-info">
                     <h3>Mini Cidade de Papelão</h3>
                     <p>Perfeita para trabalhos escolares. Prédios geométricos recortados de caixas de sapato e pintados com guache colorido.</p>
-                     <a href="#" class="btn-tutorial" id="abrirModal">Ver Passo a Passo</a>
-                   <!-- Elemento nativo de diálogo (Modal) -->
-                        <dialog id="meuModal">
-                          <h2>mine cidade de papelão</h2>
-                          <iframe width="560" height="315" src="https://www.youtube.com/embed/8OKL3vqDN7Q?si=Nl3UeWHLw7oXszih" title="YouTube video player" 
-                              frameborder="0" allow="accelerometer; autoplay; 
-                              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                         <p> <button id="fecharModal">Fechar</button></p>
-                        </dialog>
+                    <a href="#" class="btn-tutorial abrir-modal" data-modal="modal-cidade">Ver Passo a Passo</a>
+                    
+                    <dialog id="modal-cidade">
+                        <h2>Mini Cidade de Papelão</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8OKL3vqDN7Q?si=Nl3UeWHLw7oXszih" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><button type="button" class="btn-fechar">Fechar</button></p>
+                    </dialog>
                 </div>
             </div>
 
@@ -211,17 +241,16 @@
                 <div class="card-info">
                     <h3>Topografia e Maquete Verde</h3>
                     <p>Aprenda a criar montanhas cortando camadas de papelão ondulado sobrepostas e usando esponjas velhas trituradas para simular grama.</p>
-                <a href="#" class="btn-tutorial" id="abrirModal">Ver Passo a Passo</a>
-                   <!-- Elemento nativo de diálogo (Modal) -->
-                        <dialog id="meuModal">
-                          <h2>Topografia e Maquete Verde</h2>
-                         <iframe width="560" height="315" src="https://www.youtube.com/embed/x8qVvZpij_4?si=B2SGK8IZ-uyaKl_m" 
-                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-                             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-                          
-                        <p>  <button id="fecharModal">Fechar</button></p>
-                        </dialog>
+                    <a href="#" class="btn-tutorial abrir-modal" data-modal="modal-topografia">Ver Passo a Passo</a>
+                    
+                    <dialog id="modal-topografia">
+                        <h2>Topografia e Maquete Verde</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x8qVvZpij_4?si=B2SGK8IZ-uyaKl_m" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><button type="button" class="btn-fechar">Fechar</button></p>
+                    </dialog>
                 </div>
             </div>
         </div>
@@ -231,29 +260,52 @@
     <footer>
         <p>&copy; 2026 Arte em Miniatura - Feito à mão com criatividade.</p>
     </footer>
+
     <script>
+        const botoesAbrir = document.querySelectorAll('.abrir-modal');
 
-        const modal = document.getElementById('meuModal');
-       // const btnAbrir = document.getElementById('abrirModal');
-        const btnFechar = document.getElementById('fecharModal');
-        const links = dcoument.querySelectorAll('.abrir-modal');
-
-       links.forEach(link =>{
-            links.addEventListener('click', (evento) => {
-                //Impede o link de recarregar a página ou pular para o topo (#)
+        botoesAbrir.forEach(botao => {
+            botao.addEventListener('click', (evento) => {
                 evento.preventDefault();
-        
-            // Abre o modal de forma modal (bloqueia o fundo)
-            //btnAbrir.addEventListener('click', () => {
-              modal.showModal();
-           });
-       });
-        
-        // Fecha o modal
-        btnFechar.addEventListener('click', () => {
-          modal.close();
+                const idModal = botao.getAttribute('data-modal');
+                const modal = document.getElementById(idModal);
+                if (modal) {
+                    modal.showModal();
+                }
+            });
         });
-    </script>
 
+        const botoesFechar = document.querySelectorAll('.btn-fechar');
+
+        botoesFechar.forEach(botao => {
+            botao.addEventListener('click', () => {
+                const modal = botao.closest('dialog');
+                fecharEPausarVideo(modal);
+            });
+        });
+
+        const todosModais = document.querySelectorAll('dialog');
+
+        todosModais.forEach(modal => {
+            modal.addEventListener('click', (evento) => {
+                if (evento.target === modal) {
+                    fecharEPausarVideo(modal);
+                }
+            });
+
+            modal.addEventListener('close', () => {
+                const iframe = modal.querySelector('iframe');
+                if (iframe) {
+                    iframe.src = iframe.src;
+                }
+            });
+        });
+
+        function fecharEPausarVideo(modal) {
+            if (modal) {
+                modal.close();
+            }
+        }
+    </script>
 </body>
 </html>
