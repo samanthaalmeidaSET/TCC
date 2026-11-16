@@ -199,7 +199,8 @@
                           <h2>mine cidade de papelão</h2>
                           <iframe width="560" height="315" src="https://www.youtube.com/embed/8OKL3vqDN7Q?si=Nl3UeWHLw7oXszih" title="YouTube video player" 
                               frameborder="0" allow="accelerometer; autoplay; 
-                              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                              clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                          <p> <button id="fecharModal">Fechar</button></p>
                         </dialog>
                 </div>
@@ -214,7 +215,10 @@
                    <!-- Elemento nativo de diálogo (Modal) -->
                         <dialog id="meuModal">
                           <h2>Topografia e Maquete Verde</h2>
-                         <iframe width="560" height="315" src="https://www.youtube.com/embed/x8qVvZpij_4?si=B2SGK8IZ-uyaKl_m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed/x8qVvZpij_4?si=B2SGK8IZ-uyaKl_m" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
                           
                         <p>  <button id="fecharModal">Fechar</button></p>
                         </dialog>
@@ -230,13 +234,20 @@
     <script>
 
         const modal = document.getElementById('meuModal');
-        const btnAbrir = document.getElementById('abrirModal');
+       // const btnAbrir = document.getElementById('abrirModal');
         const btnFechar = document.getElementById('fecharModal');
+        const links = dcoument.querySelectorAll('.abrir-modal');
+
+       links.forEach(link =>{
+            links.addEventListener('click', (evento) => {
+                //Impede o link de recarregar a página ou pular para o topo (#)
+                evento.preventDefault();
         
-        // Abre o modal de forma modal (bloqueia o fundo)
-        btnAbrir.addEventListener('click', () => {
-          modal.showModal();
-        });
+            // Abre o modal de forma modal (bloqueia o fundo)
+            //btnAbrir.addEventListener('click', () => {
+              modal.showModal();
+           });
+       });
         
         // Fecha o modal
         btnFechar.addEventListener('click', () => {
